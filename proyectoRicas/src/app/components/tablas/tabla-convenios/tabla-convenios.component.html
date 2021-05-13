@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th data-titulo="Id">#</th>
+    <th data-titulo="Nombre" style="font-weight: bold;">Nombre</th>
+    <th data-titulo="Descuento"  style="font-weight: bold;">Descuento</th>
+    <th data-titulo="Activo"  style="font-weight: bold;">Activo </th>
+    
+
+  </tr>
+  </thead>
+  <th><app-crear-convenio> </app-crear-convenio></th>
+
+  <tbody>
+  <tr  *ngFor="let convenio of convenios">
+    <th data-titulo="Id">{{ convenio.id}}</th>
+    <td data-titulo="Nombre">{{convenio.nombre}}</td>
+    <td data-titulo="Descuento">{{ convenio.porcentajeDescuento }}  </td>
+    <td data-titulo="Activo">{{convenio.activo}} </td>
+    <td class="row" style="width: 100%;"><app-editar-convenio [con]="convenio"></app-editar-convenio> <app-eliminar-convenio [id]="convenio.id"></app-eliminar-convenio></td>
+  
+ 
+
+ 
+  </tr>
+  </tbody>
+</table>

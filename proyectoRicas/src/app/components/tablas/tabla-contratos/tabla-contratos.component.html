@@ -1,0 +1,19 @@
+<table class="table table-striped" >
+  <thead>
+<tr>
+ <th data-titulo="Id">Id</th>
+ <th data-titulo="Fecha Comienzo">fechaComienzo</th>
+ <th data-titulo="Activo">activo</th>
+
+</tr>
+</thead>
+<th><app-crear-contrato></app-crear-contrato></th>
+<tbody>
+<tr  *ngFor="let contrato of contratos">
+ <td data-titulo="Id">{{contrato.id}}</td>
+ <td data-titulo="Fecha Comienzo">{{contrato.fechaComienzo}}</td>
+ <td data-titulo="Activo">{{contrato.activo}} </td>
+ <td class="row"><app-editar-contrato [cont1] ="contrato"></app-editar-contrato><app-eliminar-contrato [id]="contrato.id"></app-eliminar-contrato><app-ver-mas-contrato [cont] ="contrato"></app-ver-mas-contrato></td>
+</tr>
+</tbody>
+</table>

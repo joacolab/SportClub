@@ -1,0 +1,28 @@
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+
+    <th  data-titulo="Id">#</th>
+    <th  data-titulo="Nombre">Nombre</th>
+    <th  data-titulo="Activo">Activo </th>
+
+  
+  </tr>
+  </thead>
+
+  <th> <app-crear-pagos></app-crear-pagos></th>
+  <tbody>
+  <tr  *ngFor="let MedioDePago of medioDePagos">
+    <td data-titulo="Id">{{ MedioDePago.id}}</td>
+    <td data-titulo="Nombre" >{{MedioDePago.nombre}}</td>
+    <td data-titulo="Activo">{{MedioDePago.activo}} </td>
+    <td  class="row"><app-editar-pagos [pag]="MedioDePago" ></app-editar-pagos><app-eliminar-pagos [id]="MedioDePago.id"></app-eliminar-pagos>  </td>
+  
+ 
+
+ 
+  </tr>
+  </tbody>
+</table>
+

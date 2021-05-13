@@ -1,0 +1,32 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Logearse</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" [(ngModel)]="logi.email"   [formControl]="emailv"><br>
+                <div class = "alert alert-danger" *ngIf="emailv.hasError('required') && (emailv.touched || emailv.dirty)">Campo
+                    requerido</div>
+                    <div class = "alert alert-danger" *ngIf="emailv.hasError('email') && (emailv.touched || emailv.dirty)">Formato de correo requerido</div>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" [(ngModel)]="logi.password"   [formControl]="passv">
+                <div class = "alert alert-danger" *ngIf="passv.hasError('required') && (passv.touched || passv.dirty)">Campo
+                    requerido</div>
+                    
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark"
+            (click)="login()">Logearse</button>
+    </div>
+</ng-template>
+
+<li class="nav-item">
+    <a class="nav-link" [routerLink]="" (click)="open(content)">Logearse</a>
+</li>

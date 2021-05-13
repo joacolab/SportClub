@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle *ngIf="  isloged() && (ROLAD() || ROLSE())">Administracion</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button ngbDropdownItem  [routerLink]="'Tabla_Convenio'" >Convenio</button>     
+          <button ngbDropdownItem  [routerLink]="'Tabla_Categorias'" >Categorias</button>  
+          <button ngbDropdownItem  [routerLink]="'Tabla_Actividad'" >Actividades</button>  
+          <button ngbDropdownItem  [routerLink]="'Tabla_MediosDePagos'" >Medios de Pago</button>          
+          <button ngbDropdownItem  [routerLink]="'Tabla_Persona'" >Personas</button>
+          <button ngbDropdownItem  [routerLink]="'Tabla_Precio'" >Precios</button>
+          <button ngbDropdownItem  [routerLink]="'Tabla_Contrato'" >Contratos</button>
+          <button ngbDropdownItem  [routerLink]="'Tabla_Prestador'" >Prestadores de Salud</button>
+          <button ngbDropdownItem  [routerLink]="'Tabla_Noticias'" *ngIf="ROLAD()">Noticias</button>     
+          <app-roles ></app-roles>
+        </div>
+      </div>
+    </div>
+  
+   
+ 

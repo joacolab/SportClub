@@ -1,0 +1,27 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Datos Noticias</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" >
+
+        <div >
+            <p><strong>Titulo: </strong> {{not.titulo}}</p>
+            <p><strong>Descripcion: </strong> {{not.descripcion}}</p>
+            <img src="{{not.imagen}}" style="width: 50%; height: 40%; align-items: center;" alt="">
+          <br>
+          <br>
+            <p><strong>Fecha Caducidad: </strong> {{not.fechaCaducidad}}</p>
+        </div>
+  
+        
+    
+        
+
+        
+    </div>
+
+</ng-template>
+<button id="but" [routerLink]="" ngbDropdownItem (click)="openLg(content)">Ver más</button>

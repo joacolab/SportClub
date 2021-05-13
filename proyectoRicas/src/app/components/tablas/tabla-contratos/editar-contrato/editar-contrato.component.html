@@ -1,0 +1,89 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Editar contrato</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <ngb-accordion [closeOthers]="true" activeIds="static-1">
+                <ngb-panel id="static-1" title="Contrato">
+                    <ng-template ngbPanelContent>
+                        <div class="form-group">
+                            <label class="ordenar" for="ac">Genero:</label>
+                            <br>
+                            M-><input class="ordenar1" type="radio" value="M" name="ac"
+                                [(ngModel)]="cont.usuarioGenero">
+                            F-><input class="ordenar1" type="radio" value="F" name="ac"
+                                [(ngModel)]="cont.usuarioGenero">
+                        </div>
+                        <div class="form-group">
+                            <label class="ordenar" for="ac1">Activo:</label>
+                            <br>
+                            Activo-><input class="ordenar1" type="radio" value="true" name="ac1" [(ngModel)]="activo1">
+                            Inactivo-><input class="ordenar1" type="radio" value="false" name="ac1"
+                                [(ngModel)]="activo1">
+                        </div>
+                        <p>
+                        <div class="form-group">
+                            <label class="ordenar" for="ac">Fecha Comienzo:</label>
+                            <div class="input-group">
+                                <input readonly class="form-control" placeholder="yyyy-mm-dd" name="dp"
+                                    [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                    <button #buttonEl class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                                        type="button"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel id="static-2" title="Persona">
+                    <ng-template ngbPanelContent>
+                        <div style="overflow-y: scroll; height: 100px;">
+                            <div *ngFor="let per of personas">
+                                <input class="ordenar1" type="radio" value="{{per.id}}" name="ac2"
+                                    [(ngModel)]="id_Persona">{{per.primerNombre}}-{{per.primerApellido}}
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel id="static-3" title="Convenio">
+                    <ng-template ngbPanelContent>
+                        <div style="overflow-y: scroll; height: 100px;">
+                            <div *ngFor="let con of convenios">
+                                <input class="ordenar1" type="radio" value="{{con.id}}" name="ac3"
+                                    [(ngModel)]="id_Convenio">{{con.nombre}}
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel id="static-4" title="Categoria">
+                    <ng-template ngbPanelContent>
+                        <div style="overflow-y: scroll; height: 100px;">
+                            <div *ngFor="let cat of categorias">
+                                <input class="ordenar1" type="radio" value="{{cat.id}}" name="ac4"
+                                    [(ngModel)]="id_Categoria">{{cat.nombre}}
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+                <ngb-panel id="static-5" title="Medio de Pago">
+                    <ng-template ngbPanelContent>
+                        <div style="overflow-y: scroll; height: 100px;">
+                            <div *ngFor="let med of medios">
+                                <input class="ordenar1" type="radio" value="{{med.id}}" name="ac5"
+                                    [(ngModel)]="id_MedioDePago">{{med.nombre}}
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click');EditarContrato()">Editar</button>
+    </div>
+</ng-template>
+<button id="but" [routerLink]="" ngbDropdownItem (click)="open(content)">Editar</button>

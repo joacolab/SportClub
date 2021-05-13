@@ -1,0 +1,24 @@
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+      <th data-titulo="Id">Id</th>
+      <th data-titulo="Nombre">Nombre</th>
+      <th data-titulo="Activo">activo</th>
+     
+    </tr>
+    </thead>
+    <th><app-crear-categoria></app-crear-categoria></th>
+    <tbody>
+    <tr *ngFor="let categoria of  lista">
+      <th data-titulo="Id">{{ categoria.id }}</th>
+      <td data-titulo="Nombre">{{ categoria.nombre }}</td>
+      <td data-titulo="Activo">{{categoria.activo}}</td>
+      
+      <td class="row"><app-editar-categoria [cat]="categoria"  ></app-editar-categoria> <app-eliminar-categoria [id]="categoria.id"></app-eliminar-categoria>
+        <app-vermas-categoria [cat]="categoria" ></app-vermas-categoria></td>
+    </tr>
+    </tbody>
+  </table>
+  
+ 

@@ -1,0 +1,15 @@
+.ordenar{
+    display: inline-block;
+    width: 100px;
+  }
+.input-group{
+    width: 50%;
+}
+#but{
+  text-align: center;
+  background-color:#ffff;
+  width: max-content;
+  border-radius: 20px;
+  border:4px;
+  border:1px solid black;
+}

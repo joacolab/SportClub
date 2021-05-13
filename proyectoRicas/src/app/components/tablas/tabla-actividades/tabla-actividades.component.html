@@ -1,0 +1,26 @@
+
+
+  <table class="table table-striped" >
+    <thead>
+    <tr>
+      <th  data-titulo="Id">#</th>
+      <th  data-titulo="Nombre">Nombre</th>
+      <th  data-titulo="Activo">Activo </th>
+    
+    
+    </tr>
+    </thead>
+    <th> <app-crear-actividad></app-crear-actividad></th>
+    <tbody>
+    <tr  *ngFor="let actividad of actividades" >
+      <td data-titulo="Id">{{ actividad.id}}</td>
+      <td  data-titulo="Nombre">{{actividad.nombre}}</td>
+      <td  data-titulo="Activo">{{actividad.activo}} </td>
+      <td  class="row"><app-editar-actividad [act]="actividad" ></app-editar-actividad><app-eliminar-actividades [id]="actividad.id" ></app-eliminar-actividades></td>
+      
+    </tr>
+    </tbody>
+    </table>
+    
+    
+    

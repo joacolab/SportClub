@@ -1,0 +1,10 @@
+<div class="row" >
+  <div class="col-sm-3" style="margin: 20px;min-height: 150px;
+  min-width: 300px;max-width: 250px;background-color: rgb(184, 231, 246);  border: 5px solid white;border-radius: 50px 20px;" *ngFor="let noticia  of noticias">
+    <h4>{{noticia.titulo}}</h4>
+    <div class="card-body" id="cuad" >
+      <img class="card-img-top" id="card-img-top" src="{{noticia.imagen}}" alt="Card image cap">
+    </div>
+    <app-view-news [not]="noticia"></app-view-news>
+  </div>
+</div>

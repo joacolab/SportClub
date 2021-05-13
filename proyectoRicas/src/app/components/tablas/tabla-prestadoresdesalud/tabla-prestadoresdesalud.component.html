@@ -1,0 +1,19 @@
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th  data-titulo="Id">#</th>
+            <th  data-titulo="Nombre">Nombre</th>
+            <th  data-titulo="Activo">Activo </th>
+        </tr>
+    </thead>
+    <th><app-modalcrear></app-modalcrear></th>
+    <tbody>
+        <tr *ngFor="let pre of lista">
+            <th data-titulo="Id" >{{ pre.id }}</th>
+            <td data-titulo="Nombre">{{ pre.nombre }}</td>
+            <td data-titulo="Activo">  {{ pre.activo }}</td>
+            <td class="row"> <app-modaleditar [pres] = "pre"></app-modaleditar><app-eliminar-prestador [id]="pre.id" ></app-eliminar-prestador></td>
+        </tr>
+    </tbody>
+</table>

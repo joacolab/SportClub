@@ -1,0 +1,32 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Datos Categoria</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" style="background-color: rgb(151, 222, 250);">
+
+        <div>
+            <p><strong>Nombre:</strong> {{cat.nombre}}</p>
+            <p> <strong>Activo:</strong> {{cat.activo}}</p> 
+        
+        </div>
+        <hr style="border-top: 2px black solid;">
+        <h3 >Precios</h3>
+<div *ngFor="let precio of precios" >
+    <p> <strong>Id:</strong> {{precio.id}}</p> 
+    <p> <strong>Valor:</strong> {{precio.valor}}</p> 
+    <p> <strong>Fecha Vigencia:</strong> {{precio.fechaVigencia}}</p> 
+    <hr>
+</div>
+        
+
+
+       
+
+
+    </div>
+
+</ng-template>
+<button id="but" [routerLink]="" ngbDropdownItem (click)="openLg(content)">Ver más</button>

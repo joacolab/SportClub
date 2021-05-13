@@ -1,0 +1,29 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Crear  Actividad</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" style="background-color: rgb(151, 222, 250);">
+        <form>
+            <div class="form-group">
+                <label class="ordenar" for="nombre">Nombre</label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="nombre" [(ngModel)]="act.nombre"
+                    [ngModelOptions]="{standalone: true}"><br>
+                    <br>
+                    <br>
+
+                    <input type="radio" value="true" name="ac" [(ngModel)]="activo1" ngModel> activo
+                    <input type="radio" value="false" name="ac"[(ngModel)]="activo1" ngModel> inactivo
+            </div>
+
+
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button"  id="but"  class="btn btn-light" style="background-color: rgb(151, 222, 250);" (click)="modal.close('Close click');PostActividad()">Crear</button>
+    </div>
+</ng-template>
+
+<button  id="but" [routerLink]="" style ="width: 150px; background-color: white;" ngbDropdownItem (click)="open(content)">Crear Actividad</button>

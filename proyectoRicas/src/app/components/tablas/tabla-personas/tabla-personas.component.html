@@ -1,0 +1,30 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th data-titulo="Id">#</th>
+            <th data-titulo="Nombre">Primer Nombre</th>
+            <th data-titulo="Primer Apellido">Primer Apellido</th>
+            <th data-titulo="Segundo Apellido">Segundo Apellido</th>
+         
+  
+          </tr>
+    </thead>
+    <th> <app-crear-persona></app-crear-persona></th>
+    <tbody>
+    <tr *ngFor="let persona of personas">
+        <td data-titulo="Id">{{persona.id}}</td>
+        <td data-titulo="Nombre">{{persona.primerNombre}}</td>
+     
+        <td data-titulo="Primer Apellido">{{persona.primerApellido}}</td>
+        <td data-titulo="Segundo Apellido">{{persona.segundoApellido}}</td>
+  
+ 
+       
+        <td class="row"><app-editar-persona [per]="persona"></app-editar-persona> <app-eliminar-persona [id]="persona.id"></app-eliminar-persona><app-vermas-persona [per]="persona" ></app-vermas-persona></td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+  

@@ -1,0 +1,31 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th data-titulo="Id">Id</th>
+      <th data-titulo="Valor">Valor</th>
+      <th data-titulo="fecha Vigencia">fechaVigencia</th>
+      <th>
+      
+      </th>
+    </tr>
+  </thead>
+  <app-crear-precio></app-crear-precio>
+  <tbody>
+    <tr *ngFor="let precio of precios">
+      <th data-titulo="Id">{{precio.id}}</th>
+      <td data-titulo="Valor">
+        {{precio.valor}}
+      </td>
+      <td data-titulo="fecha Vigencia">{{precio.fechaVigencia}}</td>
+      <td class="row">
+        <app-editar-precio [pre]="precio"></app-editar-precio> 
+        <app-eliminar-precio [id]="precio.id"></app-eliminar-precio>
+        <app-vermas-precio [pre]="precio"></app-vermas-precio>
+      </td>
+     
+    </tr>
+
+
+
+  </tbody>
+</table>

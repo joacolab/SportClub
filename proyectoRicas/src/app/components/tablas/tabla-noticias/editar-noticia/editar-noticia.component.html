@@ -1,0 +1,44 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Crear nueva noticia</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" style="background-color: rgb(151, 222, 250);">
+        <form>
+            <div class="form-group">
+                <label class="ordenar" for="titulo">Titulo</label>
+                <input class="ordenar1" type="text" id="titulo" [(ngModel)]="not.titulo"
+                [formControl]="titulov"><br>
+                <div *ngIf="titulov.hasError('required') && (titulov.touched || titulov.dirty)">Titulo Requerido</div>
+
+                    <label class="ordenar" for="descripcion">Descripcion</label>
+                    <textarea class="ordenar1" type="text" id="descripcion" [(ngModel)]="not.descripcion"
+                    [formControl]="descripcionv">
+                    </textarea>
+                    <div *ngIf="descripcionv.hasError('required') && (descripcionv.touched || descripcionv.dirty)">Descripcion requerida</div>
+
+            </div>
+            <div class="custom-file">
+                <input type="file"  [formControl]="archivov" accept=".png, .jpg, .jpeg" (change)="handleFileInput($event.target.files)">
+              
+            </div>
+            <p>
+                <div class="form-group">
+                    <div class="input-group">
+                      <input readonly class="form-control" placeholder="yyyy-mm-dd"
+                             name="dp" [(ngModel)]="model"  ngbDatepicker #d="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button #buttonEl class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                      </div>
+                    </div>
+                  </div>
+                  
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="but"   class="btn btn-light"  style="background-color: rgb(151, 222, 250);" (click)="editar()">Editar</button>
+    </div>
+</ng-template>
+<button id="but" [routerLink]="" ngbDropdownItem (click)="open(content)" >Editar</button>

@@ -1,0 +1,54 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Datos Contrato</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div>
+            <h3 style="text-decoration-line: underline;">Contrato</h3>
+            <p>Id: {{cont.id}}</p>
+            <p>Fecha Generado: {{cont.fechaHoraGenerado}}</p>
+            <p>Usuario Genero: {{cont.usuarioGenero}}</p>
+            <p>Fecha Comienso: {{cont.fechaComienzo}}</p>
+            <p>Activo: {{cont.activo}}</p>
+        </div>
+        <div style="border-top: 2px black solid;">
+            <h4 style="text-decoration-line: underline;">Socio</h4>
+            <p>Id: {{cont.socio.id}}</p>
+            <p>Primer Nombre: {{cont.socio.primerNombre}}</p>
+            <p>Segundo Nombre: {{cont.socio.segundoNombre}}</p>
+            <p>Primer Apellido: {{cont.socio.primerApellido}}</p>
+            <p>Segundo Apellido: {{cont.socio.segundoApellido}}</p>
+            <p>Fecha de Nacimiento: {{cont.socio.fechaNacimiento}}</p>
+            <p>Documento: {{cont.socio.documento}}</p>
+            <p>TipoDocumento: {{cont.socio.tipoDocumento}}</p>
+            <p>Telefono: {{cont.socio.telefono}}</p>
+            <p>Direccion: {{cont.socio.direccion}}</p>
+            <p>FechaVenceCarneSalud: {{cont.socio.fechaVenceCarneSalud}}</p>
+         
+        </div>
+        <div style="border-top: 2px black solid;">
+            <h4 style="text-decoration-line: underline;">Convenio</h4>
+            <p>Id: {{cont.convenio.id}}</p>
+            <p>Nombre: {{cont.convenio.nombre}}</p>
+            <p>Porcentaje Descuento: {{cont.convenio.porcentajeDescuento}}</p>
+            <p>Activo: {{cont.convenio.activo}}</p>
+        </div>
+        <div style="border-top: 2px black solid;">
+            <h4 style="text-decoration-line: underline;">Categoria</h4>
+            <p>Id: {{cont.categoria.id}}</p>
+            <p>Nombre: {{cont.categoria.nombre}}</p>
+            <p >Activo: {{cont.categoria.activo}}</p>
+        </div>
+        <div style="border-top: 2px black solid;">
+            <h4 style="text-decoration-line: underline;">Medio de Pago</h4>
+            <p>Id: {{cont.medioDePago.id}}</p>
+            <p>Nombre: {{cont.medioDePago.nombre}}</p>
+            <p>Activo: {{cont.medioDePago.activo}}</p>
+        </div>
+    </div>
+</ng-template>
+
+<button id="but" [routerLink]="" ngbDropdownItem (click)="open(content)">Ver más</button>

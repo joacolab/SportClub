@@ -1,0 +1,136 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Crear Usuario</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" style="background-color: rgb(151, 222, 250);">
+        <form>
+            <div class="form-group">
+                <label class="ordenar" for="primerNombre">Primer Nombre</label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="primerNombre"
+                    [(ngModel)]="per.primerNombre" [formControl]="primernombrev"><br>
+                <div class="alert alert-danger"
+                    *ngIf="primernombrev.hasError('required') && (primernombrev.touched || primernombrev.dirty)">Campo
+                    requerido</div>
+                <div class="alert alert-danger"
+                    *ngIf="primernombrev.hasError('minlength') && (primernombrev.touched || primernombrev.dirty)">
+                    Tamanio min 3</div>
+                <div class="alert alert-danger"
+                    *ngIf="primernombrev.hasError('maxlength') && (primernombrev.touched || primernombrev.dirty)">
+                    Tamanio maximo 128</div>
+
+                <br>
+                <label class="ordenar" for="segundoNombre"> Segundo Nombre</label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="segundoNombre"
+                    [(ngModel)]="per.segundoNombre" [formControl]="segundonombrev"><br>
+                <div class="alert alert-danger"
+                    *ngIf="segundonombrev.hasError('maxlength') && (segundonombrev.touched || segundonombrev.dirty)">
+                    Tamanio maximo 128</div>
+
+                <br>
+                <label class="ordenar" for="primerApellido"> Primer Apellido</label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="primerApellido"
+                    [(ngModel)]="per.primerApellido" [formControl]="primerapellidov"><br>
+                <div class="alert alert-danger"
+                    *ngIf="primerapellidov.hasError('required') && (primerapellidov.touched || primerapellidov.dirty)">
+                    Campo requerido</div>
+                <div class="alert alert-danger"
+                    *ngIf="primerapellidov.hasError('minlength') && (primerapellidov.touched || primerapellidov.dirty)">
+                    Tamanio min 3</div>
+                <div class="alert alert-danger"
+                    *ngIf="primerapellidov.hasError('maxlength') && (primerapellidov.touched || primerapellidov.dirty)">
+                    Tamanio maximo 128</div>
+                <br>
+                <label class="ordenar" for="segundoApellido"> Segundo Apellido</label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="segundoApellido"
+                    [(ngModel)]="per.segundoApellido" [formControl]="segundoapellidov"><br>
+                <div class="alert alert-danger"
+                    *ngIf="segundoapellidov.hasError('maxlength') && (segundoapellidov.touched || segundoapellidov.dirty)">
+                    Tamanio maximo 128</div>
+
+                <br>
+                <label class="ordenar" for="documento"> Documento</label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="documento" [(ngModel)]="per.documento"
+                    [formControl]="documentov"><br>
+                <div class="alert alert-danger"
+                    *ngIf="documentov.hasError('maxlength') && (documentov.touched || documentov.dirty)">Tamanio maximo
+                    128</div>
+
+                <br>
+                <label class="ordenar" for="tipoDeDocumento"> Tipo de Documento</label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="tipoDocumento"
+                    [(ngModel)]="per.tipoDocumento" [formControl]="tipodocumentov"><br>
+                <div class="alert alert-danger"
+                    *ngIf="tipodocumentov.hasError('maxlength') && (tipodocumentov.touched || tipodocumentov.dirty)">
+                    Tamanio maximo 128</div>
+
+                <br>
+                <label class="ordenar" for="telefono"> telefono </label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="telefono" [(ngModel)]="per.telefono"
+                    [formControl]="telefonov"><br>
+                <div class="alert alert-danger"
+                    *ngIf="telefonov.hasError('maxlength') && (telefonov.touched || telefonov.dirty)">Tamanio maximo 128
+                </div>
+
+                <br>
+                <label class="ordenar" for="direccion"> direccion </label>
+                <input class="ordenar1" style="margin-left: 20%;" type="text" id="direccion" [(ngModel)]="per.direccion"
+                    [formControl]="direccionv"><br>
+                <div class="alert alert-danger"
+                    *ngIf="direccionv.hasError('maxlength') && (direccionv.touched || direccionv.dirty)">Tamanio maximo
+                    128</div>
+
+                <br>
+
+                <p>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label class="ordenar" for="dp">fechaNacimiento</label>
+                        <input readonly class="form-control" style="width: 200px;" placeholder="yyyy-mm-dd" name="dp"
+                            [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                        <div class="input-group-append">
+                            <button #buttonEl class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                                type="button"></button>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                <div class="form-group">
+                    <div class="input-group">
+                        <label class="ordenar" for="dp1">fechaVenceCarneSalud</label>
+                        <input readonly class="form-control" style="width: 200px;" placeholder="yyyy-mm-dd" name="dp1"
+                            [(ngModel)]="model1" ngbDatepicker #f="ngbDatepicker">
+                        <div class="input-group-append">
+                            <button #buttonEl class="btn btn-outline-secondary calendar" (click)="f.toggle()"
+                                type="button"></button>
+                        </div>
+                    </div>
+                </div>
+                <ngb-panel id="static-5" title="Medio de Pago">
+                    <div style="overflow-y: scroll; height: 100px;">
+                        <div *ngFor="let pre of ListaP">
+                            <input [formControl]="prestadorv" class="ordenar1" type="radio" value="{{pre.id}}"
+                                name="ac5" [(ngModel)]="p">{{pre.nombre}}
+
+                        </div>
+                        <div class="alert alert-danger"
+                            *ngIf="prestadorv.hasError('required') && (prestadorv.touched || prestadorv.dirty)">Campo
+                            requerido</div>
+
+                    </div>
+                </ngb-panel>
+
+                <br>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" id="but" class="btn btn-light" style="background-color: rgb(151, 222, 250);"
+            (click)="PostPersona()">Crear</button>
+    </div>
+</ng-template>
+
+<button id="but" [routerLink]="" style="width: 150px; background-color: white;" ngbDropdownItem
+    (click)="open(content)">Crear usuario</button>

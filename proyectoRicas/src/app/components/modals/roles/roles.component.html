@@ -1,0 +1,28 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Asignar Rol</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" [(ngModel)]="rol.username"  [formControl]="correov"><br>
+                <div *ngIf="correov.hasError('email') && (correov.touched || correov.dirty)">Formato de correo requerido</div>
+            </div>
+            <label for="roles">Elija un rol:</label>
+            <select name="roles"  ng-init="roles[0]" id="roles"   [(ngModel)]="rol.role" [formControl]="rolv">
+                <option selected="true" *ngFor="let ro of roles" value="{{ro}}">{{ro}}</option>
+            </select>
+            <div *ngIf="rolv.hasError('required') && (rolv.touched || rolv.dirty)">Seleccione una opcion</div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark"
+            (click)="AsignarRol()">ASIGNAR</button>
+    </div>
+</ng-template>
+
+<button ngbDropdownItem   *ngIf="ROLAD()" [routerLink]=""  (click)="ListarRoles();open(content)" >Asignar Roles</button>

@@ -1,0 +1,26 @@
+
+  .row {
+    
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    background: skyblue;
+    margin: 60px auto;
+    position: relative;
+    text-align:center;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right:10% ;
+     padding-bottom: 50%;
+  
+}
+.btn {
+  margin-top: 13px;
+}
+
+.card-img-top{
+    
+    width: 100%;
+}

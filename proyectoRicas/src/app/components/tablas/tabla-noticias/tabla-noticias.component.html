@@ -1,0 +1,32 @@
+
+<table  class="table table-striped">
+    <thead>
+    <tr>
+      <th data-titulo="Id">#</th>
+      <th data-titulo="Titulo">Titulo</th>
+      <th data-titulo="Imagen">Imagen</th>
+
+    </tr>
+    </thead>
+    <th><app-crear-noticia></app-crear-noticia></th>
+    <tbody>
+    <tr *ngFor="let noticia of noticias" aria-controls= noticia.id (click)="isCollapsed = !isCollapsed">
+        <th data-titulo="Id">{{ noticia.id }}</th>
+        <td data-titulo="Titulo">{{ noticia.titulo }}</td>
+        <td data-titulo="Imagen"><img src={{noticia.imagen}} class="mr-2" style="width: 80px ; height: 40px;"></td>
+        <td class="row"> <app-editar-noticia [not]="noticia"></app-editar-noticia> <app-borrar-noticia [id]="noticia.id"></app-borrar-noticia><app-vermas-noticia [not]="noticia"></app-vermas-noticia></td>
+ 
+    </tr>
+  
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination (pageChange)="onPager($event)" [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+    </ngb-pagination>
+    <select  (change)="ngOnInit()" class="custom-select" style="width: auto" [(ngModel)]="pageSize">
+        <option [ngValue]="2">2 Elementos por pagina</option>
+        <option [ngValue]="4">4 Elementos por pagina</option>
+        <option [ngValue]="6">6 Elementos por pagina</option>
+      </select>
+  </div>

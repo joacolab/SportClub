@@ -1,0 +1,38 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Datos persona</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" style="background-color: rgb(151, 222, 250);">
+
+        <div >
+            <p><strong>Primer Nombre: </strong> {{per.primerNombre}}</p>
+            <p><strong>Segundo Nombre: </strong> {{per.segundoNombre}}</p>
+            <p><strong>Primer Apellido: </strong> {{per.primerApellido}}</p>
+            <p><strong>Segundo Apellido: </strong> {{per.segundoApellido}}</p>
+            <p><strong>Fecha de Nacimiento: </strong> {{per.fechaNacimiento}}</p>
+            <p><strong>Documento:</strong>  {{per.documento}}</p>
+            <p><strong>TipoDocumento: </strong> {{per.tipoDocumento}}</p>
+            <p><strong>Telefono:</strong>  {{per.telefono}}</p>
+            <p><strong>Direccion:</strong>  {{per.direccion}}</p>
+            <p><strong>FechaVenceCarneSalud: </strong> {{per.fechaVenceCarneSalud}}</p>
+            
+        </div>
+        
+        <div style="border-top: 2px black solid;">
+            <h3>Prestador de Salud</h3>
+              <p>    <strong>Nombre : </strong>{{per.prestadorDeSalud.nombre}}</p>
+            <p><strong>Activo : </strong> {{per.prestadorDeSalud.activo}}</p>
+        </div>
+        <br>
+        <br>
+    
+        
+
+        
+    </div>
+
+</ng-template>
+<button id="but" [routerLink]="" ngbDropdownItem (click)="openLg(content)">Ver más</button>

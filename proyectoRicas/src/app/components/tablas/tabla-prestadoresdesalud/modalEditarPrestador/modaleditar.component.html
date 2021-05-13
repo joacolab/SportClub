@@ -1,0 +1,25 @@
+
+<button id ="but" type="button" [routerLink]="" ngbDropdownItem (click)="open(content)">Editar</button>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Editar Prestador de salud</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body" style="background-color: rgb(151, 222, 250);">
+        <form>
+            <div class="form-group">
+                <label class="ordenar" for="nombre">nombre</label>
+                <input class="ordenar1" type="text" id="nombre" [(ngModel)]="pres.nombre"
+                    [ngModelOptions]="{standalone: true}"><br>
+                    <input type="radio" value="true" name="ac" [(ngModel)]="activo1" ngModel> activo
+                    <input type="radio" value="false" name="ac"[(ngModel)]="activo1" ngModel> inactivo
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button   id="but"  type="button" class="btn btn-light" style="background-color: rgb(151, 222, 250);" (click)="modal.close('Close click');editarPrestador()">Editar</button>
+    </div>
+</ng-template>

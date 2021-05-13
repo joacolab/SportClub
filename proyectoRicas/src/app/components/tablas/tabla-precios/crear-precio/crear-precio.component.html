@@ -1,0 +1,46 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Crear </h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body"  style="background-color: rgb(151, 222, 250);">
+        <form>
+            <div class="form-group">
+                <label class="ordenar" for="valor">valor</label>
+                <input class="ordenar1"  type="number" id="valor" [(ngModel)]="pre.valor"
+                    [ngModelOptions]="{standalone: true}"><br>
+                <br>
+                <p>
+                    <div class="form-group">
+                        <div class="input-group">   
+                            <label class="ordenar"    for="dp">fechaVenceCarneSalud</label>
+                            <input readonly class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model"
+                                ngbDatepicker #d="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button #buttonEl class="btn btn-outline-secondary calendar" (click)="d.toggle()"
+                                    type="button"></button>
+                            </div>
+                        </div>
+                    </div>
+                <br>
+                <ngb-panel title="categorias">
+                    <div  style="overflow-y: scroll; height: 100px;">          
+                        <div *ngFor="let cat of ListaC">
+                            <input class="ordenar1" type="radio" value="{{cat.id}}" name="ac5" [(ngModel)]="c">{{cat.nombre}}
+                        </div>
+                    </div>
+                </ngb-panel>
+            </div>
+            
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button"  id="but"  class="btn btn-light"  style="background-color: rgb(151, 222, 250);"
+            (click)="modal.close('Close click');crearPrecios()">Crear</button>
+    </div>
+</ng-template>
+
+<button   id="but"  [routerLink]="" style="width: 150px; background-color:white;" ngbDropdownItem
+    (click)="open(content)">Crear precios</button>
